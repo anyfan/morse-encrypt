@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>隐藏字符加密</title>
+  <link href="./src/app.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="app">
+    <div class="page">
+      <div id="message" class="message">已复制到剪贴板</div>
+      <div class="page-title">零宽字符隐藏加密</div>
+
+      <div class="switch-box">
+        <button id="morse" onclick="switch_box('morse');" class="switch-btn switch-active">摩斯码</button>
+        <button id="unicode" onclick="switch_box('unicode');" class="switch-btn">Unicode码</button>
+      </div>
+
+      <div id="type-info">支持小写英文+数字+中文</div>
+
+      <div class="ipt-box">
+        <div class="ipt-row"><input placeholder="输入前段文本" class="ipt-cell" id="plaintext_before"></div>
+        <div class="ipt-row"><input placeholder="输入加密文本" class="ipt-cell" id="incodes"></div>
+
+        <div class="ipt-row"><input placeholder="输入后段文本" class="ipt-cell" id="plaintext_after">
+          <button class="btn" onclick="handleIncode();">加密</button>
+        </div>
+
+        <br>
+
+        <div class="ipt-row">
+          <textarea placeholder="粘贴密文" class="ipt-cell" id="will_decode" style="height: 300px;"></textarea>
+          <button class="btn" onclick="handleDecode()">解密</button>
+        </div>
+
+        <div id="string" onclick="copyCodes();"></div>
+        <div id="outcodes" class="show-cell"></div>
+
+      </div>
+
+
+      <div class="footer-info">
+        <div>Designed &amp; Powerd by Rovelast</div>
+        <div>项目地址<a href="https://github.com/rover95/morse-encrypt" target="_blank">Github</a></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="./src/app.js"></script>
+  <script type="text/javascript" src="./src/main.js"></script>
+</body>
+
+</html>
